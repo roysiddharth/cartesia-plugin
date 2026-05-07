@@ -7,12 +7,29 @@ description: "Use this skill when working with the Cartesia voice AI platform. H
 
 Thin wrapper over the Cartesia API and CLI. Five operations available.
 
-## Setup
+## Setup (run once, at the start of every skill invocation)
 
-Requires `CARTESIA_API_KEY` in environment. Load from the project's `.key` file:
+**Step 1 — API key**
+
+Load `CARTESIA_API_KEY` from the project's `.key` file if not already set:
 ```bash
 export CARTESIA_API_KEY=$(cat .key)
 ```
+
+**Step 2 — CLI availability check (only needed for Operation 4)**
+
+If the user's request involves Operation 4 (CLI commands), run:
+```bash
+which cartesia
+```
+
+If the command is not found, use `AskUserQuestion` to ask:
+> "The Cartesia CLI is not installed. Install it now? (`curl -fsSL https://cartesia.sh | sh`)"
+
+- If the user says **yes**: run `curl -fsSL https://cartesia.sh | sh`, then proceed immediately with the requested operation.
+- If the user says **no**: stop and inform them the CLI is required for this operation.
+
+Do not run this check for Operations 1, 2, or 3 — they use direct API fetch and do not need the CLI.
 
 Scripts use Node.js built-in `fetch` — no npm install needed.
 
