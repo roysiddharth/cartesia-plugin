@@ -11,6 +11,12 @@ claude plugin install cartesia --scope local
 
 Then run `/cartesia:setup` to configure your API key (get one at [play.cartesia.ai/keys](https://play.cartesia.ai/keys)).
 
+## Update
+
+```bash
+claude plugin update cartesia
+```
+
 ## Skills
 
 | Skill | Invoke | What it does |
