@@ -51,7 +51,7 @@ node .claude/skills/using-cartesia/scripts/cartesia-tts.js "<text>" [--voice-id 
 # Basic synthesis
 node .claude/skills/using-cartesia/scripts/cartesia-tts.js "Hello, world!"
 
-# With playback
+# With playback (macOS only — requires afplay)
 node .claude/skills/using-cartesia/scripts/cartesia-tts.js "Testing voice" --play
 
 # Custom voice and model

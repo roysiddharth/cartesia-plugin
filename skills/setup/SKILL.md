@@ -15,4 +15,9 @@ One-time API key configuration.
    node "${CLAUDE_PLUGIN_ROOT}/scripts/cartesia-setup.js" "<api-key>"
    ```
 3. Confirm both outputs show ✓ (config file + ~/.zshrc)
-4. Let the user know setup is complete and the key is active immediately for this session
+4. Check if the `cartesia` CLI is installed:
+   ```bash
+   which cartesia
+   ```
+   If missing, tell the user to install it: `pip install cartesia` (required for deploy/agent commands in Operation 4)
+5. Let the user know setup is complete and the key is active immediately for this session

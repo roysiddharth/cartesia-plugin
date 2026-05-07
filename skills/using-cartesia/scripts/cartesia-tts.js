@@ -82,5 +82,9 @@ const durationSec = ((audioBuffer.length - 44) / (44100 * 4)).toFixed(1);
 console.log(`Saved: ${outputPath} (${durationSec}s, ${audioBuffer.length} bytes)`);
 
 if (play) {
+  if (process.platform !== 'darwin') {
+    console.log(`--play requires macOS (afplay). Audio saved to ${outputPath}`);
+    process.exit(0);
+  }
   execSync(`afplay "${outputPath}"`, { stdio: 'inherit' });
 }
