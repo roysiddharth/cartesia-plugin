@@ -1,5 +1,5 @@
 {
   "name": "cartesia",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cartesia voice AI devtools — TTS synthesis, voice listing, doc search, CLI, and debugging archetypes"
 }
