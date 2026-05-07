@@ -14,7 +14,7 @@ Then run `/cartesia:setup` to configure your API key (get one at [play.cartesia.
 ## Update
 
 ```bash
-claude plugin update cartesia --scope local
+claude plugin update cartesia@cartesia-plugin --scope local
 ```
 
 ## Skills
